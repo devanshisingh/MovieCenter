@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Book Ticket</title>
+    <script type="text/javascript">
+      function validate_fname()
+      {
+        fname = document.form.fname.value;
+        re = /[^a-zA-Z]/;
+        if(fname == "" || re.test(fname))
+        {
+          document.form.fname.style.border = "solid 3px red";
+          alert("Insert Valid First Name");
+          return false;
+        }
+        else {
+          document.form.fname.style.border = "";
+          return true; }
+      }
+      function validate_lname()
+      {
+        lname = document.form.lname.value;
+        re = /[^a-zA-Z]/;
+        if(lname != "" && re.test(lname))
+        {
+          document.form.lname.style.border = "solid 3px red";
+          alert("Insert Valid Last Name");
+          return false;
+        }
+        else {
+          document.form.lname.style.border = "";
+          return true;}
+      }
+      function validate_email()
+      {
+        email = document.form.email.value;
+        re=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})/;
+        if(email != "" && (!(re_email.test(email))))
+        {
+          document.form.email.style.border = "solid 3px red";
+          alert("Insert Valid Email ID");
+          return false;
+        }
+        else {
+          document.form.email.style.border = "";
+          return true;
+        }
+      }
+      function validate_phone()
+      {
+        phone = document.form.phone.value;
+        re = /[0-9]{10}/;
+        if((phone.length != 0) && !(re.test(phone)))
+        {
+          document.form.phone.style.border = "solid 3px red";
+          alert("Insert Valid Phone Number");
+          return false;
+        }
+        else {
+          document.form.phone.style.border = "";
+          return true; }
+      }
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Book Your Ticket Online</legend>
+      <form class="form" Name="form" action="submit_form.php" method="post">
+        <span style="color:red;">Field marked (*) are mandatory</span>
+        <table>
+          <tr>
+            <td align ="right">Select Movie(*)</td>
+            <td><select class="movie_name" name="movie_name" required>
+              <option value="" selected disabled hidden> Select a movie </option>
+              <option value="avengers">Avengers</option>
+              <option value="jumanji">Jumanji</option>
+              <option value="xmen">X-Men</option>
+              <option value="hulk">Hulk</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right">Select Date(*)</td>
+            <td><input type="date" required max="2020-11-10" min="2020-10-10" name="showdate"></td>
+          </tr>
+          <tr>
+            <td align ="right">Select Show's Starting Time(*)</td>
+            <td><input type="radio" name="showtime" value="6" required>6pm
+              <input type="radio" name="showtime" value="9" required>9pm
+              <input type="radio" name="showtime" value="12" required>12am
+            </td>
+          </tr>
+          <tr>
+            <td align ="right">First Name(*)</td>
+            <td><input type="text" name="fname" required size="10" onblur="validate_fname()"</td>
+          </tr>
+          <tr>
+            <td align ="right">Last Name</td>
+            <td><input type="text" name="lname" size="10" onblur="validate_lname()"></td>
+          </tr>
+          <tr>
+            <td align ="right">Age(*)</td>
+            <td><input type="number" name="age" min="15" required size="5">
+            <span style="color:rgba(0,0,0,0.5);">(Person below 15 cannot book the ticket)</span></td>
+          </tr>
+          <tr>
+            <td align="right">Email Id</td>
+            <td><input type="email" name="email" onblur="validate_email()"></td>
+          </tr>
+          <tr>
+            <td align="right">Phone Number</td>
+            <td><input type="text" name="phone" onblur="validate_phone()"></td>
+          </tr>
+          <tr>
+            <td align ="right">Number of Seats(*)</td>
+            <td><input type="number" name="no_of_seats" value="" min="1" max="20" required size="5">
+            <span style="color:rgba(0,0,0,0.5);">Including Your Seat</span></td>
+          </tr>
+          <tr>
+            <td align ="right">Number of Children(*)</td>
+            <td><input type="number" name="children" value="" min="0" max="20" required size="5">
+            <span style="color:rgba(0,0,0,0.5);">Under the age of 15</span></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center"><input type="submit" value="Proceed to Payment" required></td>
+          </tr>
+
+          <style media="screen">
+            td{padding: 10px;}
+          </style>
+        </table>
+      </form>
+    </fieldset>
+  </body>
+</html>

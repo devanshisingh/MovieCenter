@@ -1,0 +1,306 @@
+body{
+	background-image: url("dev_images/body-bg.gif");
+	padding: 0px;
+	margin: 1vw;
+	margin-top: 0px;
+}
+
+#header-social{
+	position: relative;
+	height: 2vw;
+	text-align: right;
+}
+#header-social img{
+	float: right;
+	height: 2vw;
+}
+
+header{
+	position: relative;
+	top: 0px;
+	height: 5vw;
+	margin-bottom: 2vw;
+}
+
+#logo{
+	position: absolute;
+	width: 35vw;
+	height: 100%;
+	left: 0;
+	display: inline;
+}
+#logo h1{
+	font-family:Arial, Helvetica, Sans-Serif;
+	font-size: 5vw;
+	text-decoration: underline;	color: rgb(204, 204, 204);
+	display: inline;
+	border: double white;
+	height:100%;
+}
+
+#header-nav{
+	margin-left: 1vw;
+	position: absolute;
+	width: 65vw;
+	right: 0;
+	height: 100%;
+	padding-top: 1vw;
+}
+#header-nav a{
+	text-align: center;
+	position: relative;
+	font-size: 2vw;
+	right: 0;
+	padding: 1vw;
+	font-family:Helvetica, Sans-Serif, Arial;
+	font-weight: bold;
+	color: rgb(204, 204, 0);
+}
+
+.line{
+	border-style: thick;
+	border-width: 1vh;
+	color:rgb(255, 255, 51);
+}
+
+.mySlides {display: none}
+/* Slideshow container */
+.slideshow-container {
+  width: 80vw;
+	height: 55vh;
+	max-width: 800px;
+	max-height: 70vh;
+  position: relative;
+	top: 2vw;
+  margin: auto;
+}
+.slider-image{
+	position: absolute;
+	height: 100%;
+	width: 70%;
+}
+.slider-right{
+	position: absolute;
+	right: 0;
+	width: 30%;
+	height: 100%;
+	background-color: rgba(240, 122, 122, 0.8);
+	align-items: center;
+}
+
+.slider-right button{
+	bottom: 10px;
+}
+
+.book-now{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 50px;
+	min-height: 50px;
+	width: 10vw;;
+	border-radius: 15%;
+	background-color: yellow;
+	font-weight: bolder;
+	padding: 0;
+	border: solid black;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.slider-text h1,p, h3{
+	position: relative;
+	text-align: center;
+	color: black;
+}
+.slider-text h1 {
+  font-size: max(3vw, 4vh);
+  padding: 0 12px 0 12px;
+}
+.slider-text p{
+	font-size: max(1vw, 10px);
+}
+.slider-text h3 {
+	padding-bottom: 1vh;
+	font-size: max(2vw, 3vh);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: min(max(20px, 5vh), 50px) 2px 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.slider-text {font-size: 11px}
+}
+
+#main-body{
+	position: relative;
+	top: 1vh;
+	width: 100%;
+	height: auto;
+	min-height: 400px;
+}
+
+#movies{
+	position:relative;
+	float: left;
+	width: 80%;
+	height: auto;
+	display: flex;
+	color: white;
+}
+
+.Tile-Title{
+  position: relative;
+	width: 15vw;
+	height: 40vh;
+  min-width: 50px;
+  min-height: 50px;
+  margin-left: 3vw;
+}
+
+.Flip-card{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.Flip-card img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.Tile-Title:hover .Flip-card {
+  transform: rotateY(180deg);
+}
+
+.Tile-Title:hover img{
+	opacity: 0.2;
+}
+
+.Flip-card-front, .Flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.Flip-card-back {
+  background-color: transparent;
+  transform: rotateY(180deg);
+}
+
+.text{
+  position: absolute;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+	color: white;
+	font-size: max(0.75vw, 1.5vh);
+}
+.movie-name{
+	color: white;
+	font-size: min(2vw, 3vh);
+}
+
+.Flip-card-back button{
+	bottom: 5px;
+}
+
+.Tile-Title p{
+	position: absolute;
+	margin: 0;
+	text-align: center;
+	width: 100%;
+}
+
+
+
+#sidebar{
+	position: relative;
+	width: 20%;
+	height: 100%;
+	background-color: #ffff00de;
+	/* #00ffaba3 */
+	float: left;
+}
+#sidebar table{
+	text-align: center;
+}
+
+#sidebar td{
+	border-bottom: solid black;
+	font-size: min(2vw, 3vh);
+}
+
+
+footer{
+	position: relative;
+	top: 3vh;
+	background-color: #ffffffb3;
+	padding: 2vh;
+}
+footer img{
+	height: 5vh;
+}

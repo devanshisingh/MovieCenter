@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MovieCentre | Book Tickets Online</title>
+    <script type="text/javascript">
+      function openBookingForm()
+      {
+        window.open("form.html");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="header-social" class="social" style="color:white;">
+      <span style="font-size: min(max(10px, 1.5vw), 22px);">Follow Us On --- </span>
+      <a href="#" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+    </div>
+    </div>
+
+    <header>
+      <div id="logo">
+        <h1>MovieCentre</h1>
+      </div>
+      <nav id="header-nav">
+        <a href="#">Home</a>
+        <a href="#movies">Now Showing</a>
+        <a href="#">Coming Soon</a>
+        <a href="#Contact">Contact</a>
+      </nav>
+    </header>
+
+    <hr class="line" style="top: 1vw;">
+
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img class="slider-image" src="images/avengers.jpeg">
+        <div class="slider-right">
+          <div class="slider-text">
+            <h1>Avengers <br><h3>Endgame</h3></h1>
+            <p>IMDb Rating<br>8.4 / 10</p>
+          </div>
+          <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+        </div>
+      </div>
+      <div class="mySlides fade">
+        <img class="slider-image" src="images/thor.jpeg">
+        <div class="slider-right">
+          <div class="slider-text">
+            <h1>Thor <br> <h3>Ragnarok</h3>
+            <p>IMDb Rating<br>8 / 10<p></div>
+          <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+        </div>
+      </div>
+      <div class="mySlides fade">
+        <img class="slider-image" src="images/golmaal.jpg">
+        <div class="slider-right">
+          <div class="slider-text">
+          <h1>Golmaal <br> <h3>Fun Unlimited</h3>
+          <p>IMDb Rating<br>6 / 10<p></div>
+          <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+        </div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+
+    <hr class="line">
+
+    <div id="main-body">
+      <div id="movies">
+        <div class="Tile-Title">
+          <div class="Flip-card">
+            <img src="images/thor.jpeg" alt="">
+            <div class="Flip-card-front">
+              <!-- <p class="text-box" style="font-size: 18px;">Content <br> Writing</p> -->
+            </div>
+            <div class="Flip-card-back">
+              <p class="text">Deprived of his mighty hammer Mjolnir, Thor must escape the other side of the universe to save his home, Asgard, from Hela, the goddess of death.</p>
+              <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+            </div>
+          </div>
+          <p class="movie-name"><strong>Thor<br> Ragnarok</strong> <br> 8 / 10<br><a href="https://www.youtube.com/watch?v=ue80QwXMRHg" target="_blank">Watch Trailer</a></p>
+        </div>
+        <div class="Tile-Title">
+          <div class="Flip-card">
+            <img src="images/movie1.jpg" alt="">
+            <div class="Flip-card-front">
+              <!-- <p class="text-box" style="font-size: 18px;">Content <br> Writing</p> -->
+            </div>
+            <div class="Flip-card-back">
+              <p class="text">Something About the movie</p>
+              <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+            </div>
+          </div>
+          <p class="movie-name"><strong>Movie Name</strong> <br> IMDb Rating <br><a href="#" target="_blank">Watch Trailer</a></p>
+        </div>
+        <div class="Tile-Title">
+          <div class="Flip-card">
+            <img src="images/movie1.jpg" alt="">
+            <div class="Flip-card-front">
+            </div>
+            <div class="Flip-card-back">
+              <p class="text">Something About the movie</p>
+              <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+            </div>
+          </div>
+          <p class="movie-name"><strong>Movie Name</strong> <br> IMDb Rating <br><a href="#" target="_blank">Watch Trailer</a></p>
+        </div>
+        <div class="Tile-Title">
+          <div class="Flip-card">
+            <img src="images/movie1.jpg" alt="">
+            <div class="Flip-card-front"></div>
+            <div class="Flip-card-back">
+              <p class="text">Something About the movie</p>
+              <button class="book-now" type="button" name="button" onclick="openBookingForm()">Book Now</button>
+            </div>
+          </div>
+          <p class="movie-name"><strong>Movie Name</strong> <br> IMDb Rating <br><a href="#" target="_blank">Watch Trailer</a></p>
+        </div>
+
+      </div>
+      <div id="sidebar">
+         <table>
+           <tr>
+             <th style="border-bottom: solid black;"><h3>News</h3></th>
+           </tr>
+           <tr>
+             <td>Tom Hiddleston Gets Thor’s Long Flowing Hair In Marvel Recast Art</td>
+           </tr>
+           <tr>
+             <td>Gal Gadot Defends Celebrity ‘Imagine’ Video</td>
+           </tr>
+           <tr>
+             <td>Chris Hemsworth Confirms Mad Max Furiosa Casting</td>
+           </tr>
+           <tr>
+             <td>Avatar 2 Set Photo Reveals First Look At New Human Science Lab</td>
+           </tr>
+         </table>
+      </div>
+
+    </div>
+
+    <footer id="Contact">
+      <h2>Contact Us</h2>
+      Email Id -- something@something.com<br>
+      Phone Number -- +91 1234567890<br>
+      <span style="font-size: min(max(10px, 1.5vw), 22px);">Follow Us On --- </span>
+      <a href="#" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+      <a href="#" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
+      <a href="#" target="_blank"><img src="images/twitter.png" alt="Twitter"></a>
+      <p>&copy Devanshi Singh</p>
+    </footer>
+  </body>
+</html>
